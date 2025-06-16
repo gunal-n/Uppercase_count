@@ -418,5 +418,107 @@
 //     }
 // }
 
+// Q9. Problem Statement
+// There is an id code that is supposed to be given to all the aspirants of an exam. It is a substring of a given string. That means, the authority takes a string and then assigns all the unique substrings to all the students. Suppose there is a string “abcde”, so the ids of the students will be “a”, “b”, “c”, “d”, “e”, “ab”, “abc”, “abcd”, “abcde”, ” bc”, “bcd”, “bcde”, “cd”, “cde”, “de”.
+// The students are standing in a line according to the lexicographic order of their given ids. You have to find out the id of the last student for the given input string from which the ids are generated.
+// Input Format:
+// Single line with the id generating string
+// Output format:
+// The last id as per lexicographical order
+// Constraints:
+// Number of characters in the string<=10^9
+// •	Sample Input: abdc
+// •	Sample output: dc
+// •	Explanation: The last student will be with the id dc. The order will be
+// abdc
+// a
+// ab
+// abd
+// abdc
+// b
+// bd
+// bdc
+// c
+// d
+// dc
+
+// import java.util.Scanner;
+
+// public class Ques {
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         String s = sc.nextLine();
+//         sc.close();
+
+//         String max = "";
+
+//         for (int i = 0; i < s.length() - 1; i++) {
+//             String sub = s.substring(i, i + 2);
+//             if (sub.compareTo(max) > 0) {
+//                 max = sub;
+//             }
+//         }
+
+//         System.out.println(max);
+//     }
+// }
+
+// Q10. Problem Statement
+// You are given an array, You have to choose a contiguous subarray of length ‘k’, and find the minimum of that segment, return the maximum of those minimums.
+// •	Sample Input:
+// 1 →  Length of segment x =1
+// 5 →  size of space n = 5
+// 1 → space = [ 1,2,3,1,2]
+// 2 
+// 3 
+// 1 
+// 2 
+// •	Sample Output: 3
+// •	Explanation: The subarrays of size x = 1 are [1],[2],[3],[1], and [2],Because each subarray only contains 1 element, each value is minimal with respect to the subarray it is in. The maximum of these values is 3. Therefore, the answer is 3.
+
+import java.util.Scanner;
+
+public class Ques {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input segment length k
+        int k = sc.nextInt();
+
+        // Input size of array
+        int n = sc.nextInt();
+
+        int[] space = new int[n];
+        for (int i = 0; i < n; i++) {
+            space[i] = sc.nextInt();
+        }
+
+        int maxOfMins = Integer.MIN_VALUE;
+
+        // Loop over all subarrays of length k
+        for (int i = 0; i <= n - k; i++) {
+            int min = Integer.MAX_VALUE;
+
+            // Find min in current subarray of size k
+            for (int j = i; j < i + k; j++) {
+                if (space[j] < min) {
+                    min = space[j];
+                }
+            }
+
+            // Track the max among these minimums
+            if (min > maxOfMins) {
+                maxOfMins = min;
+            }
+        }
+
+        System.out.println(maxOfMins);
+        sc.close();
+    }
+}
+
+
+
+
 
 
