@@ -1,3 +1,5 @@
+
+
 class uppercount {
     public static void main(String[] args){
         StringBuffer sb = new StringBuffer("HEllo WE Are");
