@@ -476,46 +476,46 @@
 // •	Sample Output: 3
 // •	Explanation: The subarrays of size x = 1 are [1],[2],[3],[1], and [2],Because each subarray only contains 1 element, each value is minimal with respect to the subarray it is in. The maximum of these values is 3. Therefore, the answer is 3.
 
-import java.util.Scanner;
+// import java.util.Scanner;
 
-public class Ques {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+// public class Ques {
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
 
-        // Input segment length k
-        int k = sc.nextInt();
+//         // Input segment length k
+//         int k = sc.nextInt();
 
-        // Input size of array
-        int n = sc.nextInt();
+//         // Input size of array
+//         int n = sc.nextInt();
 
-        int[] space = new int[n];
-        for (int i = 0; i < n; i++) {
-            space[i] = sc.nextInt();
-        }
+//         int[] space = new int[n];
+//         for (int i = 0; i < n; i++) {
+//             space[i] = sc.nextInt();
+//         }
 
-        int maxOfMins = Integer.MIN_VALUE;
+//         int maxOfMins = Integer.MIN_VALUE;
 
-        // Loop over all subarrays of length k
-        for (int i = 0; i <= n - k; i++) {
-            int min = Integer.MAX_VALUE;
+//         // Loop over all subarrays of length k
+//         for (int i = 0; i <= n - k; i++) {
+//             int min = Integer.MAX_VALUE;
 
-            // Find min in current subarray of size k
-            for (int j = i; j < i + k; j++) {
-                if (space[j] < min) {
-                    min = space[j];
-                }
-            }
+//             // Find min in current subarray of size k
+//             for (int j = i; j < i + k; j++) {
+//                 if (space[j] < min) {
+//                     min = space[j];
+//                 }
+//             }
 
-            // Track the max among these minimums
-            if (min > maxOfMins) {
-                maxOfMins = min;
-            }
-        }
+//             // Track the max among these minimums
+//             if (min > maxOfMins) {
+//                 maxOfMins = min;
+//             }
+//         }
 
-        System.out.println(maxOfMins);
-        sc.close();
-    }
-}
+//         System.out.println(maxOfMins);
+//         sc.close();
+//     }
+// }
 
 
 
