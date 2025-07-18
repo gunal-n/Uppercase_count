@@ -87,11 +87,81 @@ import java.util.Scanner;
 // }
 
 
-class Qpro{
+// class Qpro{
+//     public static void main(String[] args) {
+//         Scanner s = new Scanner(System.in);
+//         String str = s.nextLine();
+//         int countletter = 0;
+//         int countdigit = 0;
+//         for(int i = 0; i < str.length(); i++){
+//             //String to charater
+//             char ch = str.charAt(i);
+//             if(Character.isLetter(ch)){
+//                countletter ++;
+//             }
+//             if (Character.isDigit(ch)) {
+//                 countdigit++;
+//             }
+//         }
+//         if(countletter > 0 && countdigit > 0 ){
+//             System.out.println("True");
+//         }
+//         else{
+//             System.out.println("False");
+//         }
+//     }
+// }
+
+
+// class Qpro {
+//     public static void main(String[] args) {
+//         Scanner s = new Scanner(System.in);
+//         String str = s.nextLine();
+        
+//         boolean a = false, e = false, i = false, o = false, u = false;
+
+//         for (int j = 0; j < str.length(); j++) {
+//             char ch = str.toLowerCase().charAt(j);
+//             if (ch == 'a') a = true;
+//             if (ch == 'e') e = true;
+//             if (ch == 'i') i = true;
+//             if (ch == 'o') o = true;
+//             if (ch == 'u') u = true;
+//         }
+
+//         if (a && e && i && o && u) {
+//             System.out.println("Accepted");
+//         } else {
+//             System.out.println("Not Accepted");
+//             if(!a) System.out.println("'a'");
+//             if(!e) System.out.println("'e'");
+//             if(!i) System.out.println("'i'");
+//             if(!o) System.out.println("'o'");
+//             if(!u) System.out.println("'u'");
+//         }
+//     }
+// }
+
+class Qpro {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         String str = s.nextLine();
-        
-    }
+        char str2[] = str.toCharArray();
+        int x = 1;
+        int i,j;
+        for (i = 1; i < str2.length; i++) {
+                for(j = i-1; j >= 0; j--){
+                    if(str2[i] == str2[j])
+                        break;
+                }
+                if(j == -1){
+                    str2[x++] = str2[i];
+                }
+            }
+            for(j = 0; j < x; j++)
+                System.out.print(str2[j]);
+    }    
 }
+
+
 
