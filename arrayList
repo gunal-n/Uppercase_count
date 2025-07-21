@@ -1,0 +1,52 @@
+// import java.util.ArrayList;
+// import java.util.Scanner;
+
+// public class arrayList {
+//     public static void main(String[] args) {
+//         // Create an ArrayList to store numbers
+//         ArrayList<Integer> numbers = new ArrayList<>();
+//         Scanner scanner = new Scanner(System.in);
+
+//         System.out.println("Enter numbers (type '0' to stop):");
+
+//         while (true) {
+//             int input = scanner.nextInt(); // Read user input
+//             if (input == 0) { // Stop when user enters 0
+//                 break;
+//             }
+//             numbers.add(input); // Add input to the ArrayList
+//         }
+
+//         System.out.println("Numbers entered: " + numbers);
+//         scanner.close();
+//     }
+// }
+
+// import java.util.ArrayList;
+// import java.util.Arrays;
+// import java.util.Collections;
+
+// public class Qpro {
+//     public static void main(String[] args) {
+//         // Sample input like A1 and A2
+//         ArrayList<Integer> A1 = new ArrayList<>(Arrays.asList(2, 1, 2, 5, 7, 1, 9, 3, 6, 8, 8));
+//         ArrayList<Integer> A2 = new ArrayList<>(Arrays.asList(2, 1, 8, 3));
+
+//         ArrayList<Integer> result = new ArrayList<>();
+
+//         // Step 1: Add elements from A1 that are present in A2, in the order of A2
+//         for (int n : A2) {
+//             while (A1.contains(n)) {
+//                 result.add(n);
+//                 A1.remove((Integer) n); // Remove by value, not index
+//             }
+//         }
+
+//         // Step 2: Sort remaining elements and add to result
+//         Collections.sort(A1);  // A1 now contains only leftover elements
+//         result.addAll(A1);
+
+//         // Final Output
+//         System.out.println("Sorted A1 according to A2: " + result);
+//     }
+// }
