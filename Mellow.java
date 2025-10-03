@@ -38,5 +38,6 @@ import java.util.*;
                 System.out.println(chars[i] + " " + arr[i]);
             }
         }
+        s.close();
     }
 }        
